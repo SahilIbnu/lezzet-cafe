@@ -1,0 +1,829 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  color: #f6efef;
+}
+
+/* Home Page Video Section */
+.home-page-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Header */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 15px 20px;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+  opacity: 0.8;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.7;
+  transition: color 0.3s;
+}
+
+.nav-list a:hover {
+  color: black;
+  opacity: 1;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Home Content */
+.home-content {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+.p-con {
+  font-size: 1.75rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: black;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Chronicle Section */
+.sec1-maincontain {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  background-color: aqua;
+}
+
+.sec1-content-co {
+  text-align: center;
+  color: #333;
+}
+
+.sec1-head {
+  font-size: 2.5rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #1b0404;
+    margin-bottom: 1.5rem;
+}
+
+.sec-1-subtitle {
+  font-weight: 300;
+  color: #555;
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.p-sec1 {
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+}
+
+
+/* Sky Section */
+.sky-section {
+  min-height: 100vh;
+  background: url('lezzet photo/sky WEB-BACKDROP .jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.sky-section-title {
+  font-size: 2.5rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  color: black;
+  margin-bottom: 1.5rem;
+}
+
+.sky-section-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: black;
+  margin-bottom: 2rem;
+}
+
+.sky-explore-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #88C3FD;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.sky-explore-btn:hover {
+  background-color: #58bcf6;
+}
+
+.sky-gallery-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.sky-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.sky-gallery-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.sky-gallery-img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .logo img {
+      width: 120px;
+  }
+
+  .nav-list {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      /* background-color: rgba(0, 0, 0, 0.9); */
+      padding: 15px;
+      border-radius: 5px;
+  }
+
+  .nav-list.show {
+      display: flex;
+  }
+
+  .hamburger {
+      display: flex;
+  }
+
+  .p-con {
+      font-size: 1.5rem;
+  }
+
+  .sky-section-title {
+      font-size: 2rem;
+  }
+
+  .sky-section-text {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .p-con {
+      font-size: 1.3rem;
+  }
+
+  .sky-section-title {
+      font-size: 1.8rem;
+  }
+
+  .sky-section-text {
+      font-size: 0.85rem;
+  }
+
+  .sky-explore-btn {
+      padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo img {
+      width: 100px;
+  }
+
+  .p-con {
+      font-size: 1.25rem;
+      line-height: 1.4;
+  }
+
+  .sec1-maincontain {
+      padding: 1rem 0;
+  }
+
+  .sec1-content-co {
+      padding: 0 1rem;
+  }
+
+  .sec1-head {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .sec-1-subtitle {
+      font-size: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  .p-sec1 {
+      font-size: clamp(0.85rem, 2vw, 0.95rem);
+  }
+
+  .sky-section {
+      padding: 1.5rem 0;
+  }
+
+  .sky-section-title {
+      font-size: 1.5rem;
+  }
+
+  .sky-section-text {
+      font-size: 0.8rem;
+  }
+
+  .sky-gallery-img {
+      margin-bottom: 1rem;
+  }
+}
+@media (max-width: 506px) {
+  .home-page-container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  #bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+}
+
+
+/* section waves style  */
+
+/* styles.css */
+
+.waves-section {
+  min-height: 100vh;
+  background: url('lezzet photo/sea water WEB-BACKDROP.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.waves-section-title {
+  font-size: 2.5rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  color: black;
+  margin-bottom: 1.5rem;
+}
+
+.waves-section-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #0f0202;
+  margin-bottom: 2rem;
+}
+
+.waves-explore-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #A4CFEB #CEDFF0;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.waves-explore-btn:hover {
+  background-color: #E1E7EF;
+}
+
+.waves-gallery-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.waves-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.waves-gallery-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .waves-section-title {
+      font-size: 2rem;
+  }
+  
+  .waves-section-text {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .waves-section-title {
+      font-size: 1.8rem;
+  }
+  
+  .waves-section-text {
+      font-size: 0.85rem;
+  }
+  
+  .waves-explore-btn {
+      padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .waves-section {
+      padding: 1.5rem 0;
+  }
+  
+  .waves-section-title {
+      font-size: 1.5rem;
+  }
+  
+  .waves-section-text {
+      font-size: 0.8rem;
+  }
+  
+  .waves-gallery-img {
+      margin-bottom: 1rem;
+  }
+}
+
+/* section sand style */
+
+.sand-section {
+  min-height: 100vh;
+  background: url('lezzet photo/sand WEB-BACKDR.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.sand-section-title {
+  font-size: 2.5rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #1b0404;
+  margin-bottom: 1.5rem;
+}
+
+.sand-section-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #0f0202;
+  margin-bottom: 2rem;
+}
+
+.sand-explore-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #FDDB9D #FFDE9A;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.sand-explore-btn:hover {
+  background-color: #fbd17d;
+}
+
+.sand-gallery-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.sand-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.sand-gallery-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.sand-gallery-img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .sand-section-title {
+      font-size: 2rem;
+  }
+  
+  .sand-section-text {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sand-section-title {
+      font-size: 1.8rem;
+  }
+  
+  .sand-section-text {
+      font-size: 0.85rem;
+  }
+  
+  .sand-explore-btn {
+      padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .sand-section {
+      padding: 1.5rem 0;
+  }
+  
+  .sand-section-title {
+      font-size: 1.5rem;
+  }
+  
+  .sand-section-text {
+      font-size: 0.8rem;
+  }
+  
+  .sand-gallery-img {
+      margin-bottom: 1rem;
+  }
+}
+
+/* form validation */
+
+.footer {
+  background-image: url('lezzet photo/footer img.jpg');
+  /* background-image: url('lezzet photo/beach with small-footer.png'); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 3rem 0;
+  color: white;
+  position: relative;
+  min-height: 100vh;
+  width: 99vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.footer * {
+  position: relative;
+  z-index: 2;
+}
+
+.footer h2 {
+  font-size: 1.5rem; 
+  margin-bottom: 1rem; 
+  font-weight: bold;
+  color: #fff;
+}
+
+.footer h5 {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Form Styles */
+.footer-form label {
+  display: block;
+  font-size: 0.875rem; 
+  font-weight: 500; 
+  color: white;
+}
+
+.footer-form input,
+.footer-form textarea {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  background: #fff;
+  color: #333;
+}
+
+.footer-form input:focus,
+.footer-form textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.5);
+}
+
+.footer-form button {
+  background-color:  #84C8DF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.footer-form button:hover {
+  background-color:  #3B8DA7;
+}
+
+/* Error and Success Messages */
+.error-message {
+  color: #f87171;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.success-message {
+  color: #34d399;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  display: none;
+}
+
+/* Footer Info and Social Links */
+.footer-info p {
+  color: white; 
+}
+
+.social-links {
+  margin-top: 1rem; /* Equivalent to mt-4 */
+}
+
+.social-links a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #070707;
+}
+
+/* Main Content Styling */
+.container h1 {
+  font-size: 1.875rem; 
+  font-weight: 700; 
+}
+
+.container.py-5 {
+  padding-top: 3rem; 
+  padding-bottom: 3rem;
+}
+
+/* Copyright Section */
+.footer .text-center {
+  margin-top: 2rem; 
+  color: #9ca3af; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+      text-align: center;
+  }
+
+  .footer-form {
+      margin-top: 1.5rem;
+  }
+
+  .social-links {
+      margin-top: 1.5rem;
+  }
+
+  .footer-info {
+      margin-top: 1.5rem;
+  }
+}
+
+/* Ensure the map is responsive */
+/* .map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100;
+  border: 0;
+} */
+
+
+/* Adjust map height for different screen sizes */
+/* @media (min-width: 768px) {
+  .map-container {
+      padding-bottom: 300px; 
+  }
+}
+
+@media (max-width: 576px) {
+  .map-container {
+      padding-bottom: 75%; 
+  }
+} */
+
+/* Styling for the phone number link */
+.phone-link {
+  font-size: 15px;
+  color: whitesmoke; 
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.phone-link:hover {
+  color: white; 
+  
+}
+
+.address-link {
+  font-size: 15px;
+  color: whitesmoke; 
+  text-decoration: none;
+  font-weight: bold;
+}
+.address-link:hover {
+  color: white; 
+  
+}
+
+.email-link {
+  font-size: 15px;
+  color: whitesmoke; 
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.email-link:hover {
+  color: white; 
+  
+}
